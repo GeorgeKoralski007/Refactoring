@@ -47,25 +47,28 @@ public class Dungeon
 {
    public static void main(String[] args)
 	{
-
-		Hero theHero;
-		Monster theMonster;
-
-		do
-		{
-		    theHero = chooseHero();
-		    theMonster = generateMonster();
-			 battle(theHero, theMonster);
-		} while (playAgain());
-
+      Dungeon dungeonGame = new Dungeon();
+      dungeonGame.Play();
     }//end main method
+    
+    public void Play()
+    {
+      Hero theHero;
+      Monster theMonster;
+      do
+      {
+         theHero = chooseHero();
+         theMonster = generateMonster();
+         battle(theHero, theMonster);
+      } while (playAgain());
+    }
 
 /*-------------------------------------------------------------------
 chooseHero allows the user to select a hero, creates that hero, and
 returns it.  It utilizes a polymorphic reference (Hero) to accomplish
 this task
 ---------------------------------------------------------------------*/
-	public static Hero chooseHero()
+	private Hero chooseHero()
 	{
 		int choice;
       do
@@ -85,7 +88,7 @@ this task
 generateMonster randomly selects a Monster and returns it.  It utilizes
 a polymorphic reference (Monster) to accomplish this task.
 ---------------------------------------------------------------------*/
-	public static Monster generateMonster()
+	private Monster generateMonster()
 	{
 		int choice = (int)(Math.random() * 3) + 1;
       
@@ -96,7 +99,7 @@ a polymorphic reference (Monster) to accomplish this task.
 playAgain allows gets choice from user to play another game.  It returns
 true if the user chooses to continue, false otherwise.
 ---------------------------------------------------------------------*/
-	public static boolean playAgain()
+	private boolean playAgain()
 	{
 		char input;
       do
@@ -114,11 +117,10 @@ and a Monster to be passed in.  Battle occurs in rounds.  The Hero
 goes first, then the Monster.  At the conclusion of each round, the
 user has the option of quitting.
 ---------------------------------------------------------------------*/
-	public static void battle(Hero theHero, Monster theMonster)
+	private void battle(Hero theHero, Monster theMonster)
 	{
-		char pause = 'p';
-		System.out.println(theHero.getName() + " battles " +
-							theMonster.getName());
+		char choice = 'y';
+		System.out.println(theHero.getName() + " battles " + theMonster.getName());
 		System.out.println("---------------------------------------------");
 
 		//do battle
@@ -130,12 +132,15 @@ user has the option of quitting.
 			//monster's turn (provided it's still alive!)
 			if (theMonster.isAlive())
 			    theMonster.attack(theHero);
+         
+			//let the player bail out if desired only if both are alive
+         if (theHero.isAlive() && theMonster.isAlive())
+         do {
+   			System.out.print("\nContinue battle (y/n): ");
+   			choice = Character.toLowerCase(Keyboard.readChar());
+         } while (choice != 'y' && choice != 'n');
 
-			//let the player bail out if desired
-			System.out.print("\n-->q to quit, anything else to continue: ");
-			pause = Keyboard.readChar();
-
-		} while  (theHero.isAlive() && theMonster.isAlive() && pause != 'q'); //end battle loop
+		} while  (theHero.isAlive() && theMonster.isAlive() && choice == 'y'); //end battle loop
 
 		if (!theMonster.isAlive())
 		    System.out.println(theHero.getName() + " was victorious!");
