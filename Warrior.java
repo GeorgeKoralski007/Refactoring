@@ -14,11 +14,18 @@
 
 public class Warrior extends Hero
 {
+	//created fields to be used in the super call to make the construction more readable
+	private static int hitPoints = 125;
+	private static int attackSpeed = 4;
+	private static double chanceToHit = .8;
+	private static int damageMin = 35;
+	private static int damageMax = 60;
+	private static double chanceToBlock = .2;
 
     public Warrior()
 	{
 
-		super("Warrior", 125, 4, .8, 35, 60, .2);
+		super("Warrior", hitPoints, attackSpeed, chanceToHit, damageMin, damageMax, chanceToBlock);
 
 
     }//end constructor
@@ -53,16 +60,13 @@ public class Warrior extends Hero
 
     public void battleChoices(DungeonCharacter opponent)
 	{
+    	super.battleChoices(opponent);
+		
 		int choice;
-
-		super.battleChoices(opponent);
 
 		do
 		{
-		    System.out.println("1. Attack Opponent");
-		    System.out.println("2. Crushing Blow on Opponent");
-		    System.out.print("Choose an option: ");
-		    choice = Keyboard.readInt();
+		   choice = super.attackMenu("Crushing blow on " + opponent.getName(), opponent);
 
 		    switch (choice)
 		    {

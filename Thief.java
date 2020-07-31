@@ -11,10 +11,18 @@
 
 public class Thief extends Hero
 {
+	
+	//created fields to be used in the super call to make the construction more readable
+	private static int hitPoints = 75;
+	private static int attackSpeed = 6;
+	private static double chanceToHit = .8;
+	private static int damageMin = 20;
+	private static int damageMax = 40;
+	private static double chanceToBlock = .5;
 
     public Thief()
 	{
-		super("Thief", 75, 6, .8, 20, 40, .5);
+		super("Thief", hitPoints , attackSpeed, chanceToHit, damageMin, damageMax, chanceToBlock);
 
 
 
@@ -45,16 +53,13 @@ public class Thief extends Hero
     public void battleChoices(DungeonCharacter opponent)
 	{
 		super.battleChoices(opponent);
+		
 		int choice;
-
-
+		
 		do
 		{
-		    System.out.println("1. Attack Opponent");
-		    System.out.println("2. Surprise Attack");
-		    System.out.print("Choose an option: ");
-		    choice = Keyboard.readInt();
-
+		   choice = super.attackMenu("Suprise Attack on " + opponent.getName(), opponent);
+		   
 		    switch (choice)
 		    {
 			    case 1: attack(opponent);

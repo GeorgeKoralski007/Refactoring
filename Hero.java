@@ -56,7 +56,7 @@ This method is called by: hero constructor
   public void readName()
   {
 		System.out.print("Enter character name: ");
-		name = Keyboard.readString();
+		this.name = Keyboard.readString();
   }//end readName method
 
 /*-------------------------------------------------------
@@ -68,7 +68,7 @@ Returns: true if attack is blocked, false otherwise
 This method calls: Math.random()
 This method is called by: subtractHitPoints()
 ---------------------------------------------------------*/
-  public boolean defend()
+  private boolean defend()
   {
 		return Math.random() <= chanceToBlock;
 
@@ -122,5 +122,20 @@ This method is called by: external sources
 		System.out.println("Number of turns this round is: " + numTurns);
 
 	}//end battleChoices
+	
+	//Changed the way battleChoices works in Hero
+	//Can be overloaded if a new hero ends up having 3 moves
+	public int attackMenu(String specialMove, DungeonCharacter opponent){
+		int choice;
+
+
+			System.out.println("1. Attack Opponent");
+			System.out.println("2. " + specialMove);
+			System.out.print("Choose an option: ");
+			choice = Keyboard.readInt();
+
+		
+		return choice;
+	}
 
 }//end Hero class

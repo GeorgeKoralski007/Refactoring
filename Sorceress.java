@@ -13,13 +13,20 @@
 
 public class Sorceress extends Hero
 {
+	//created fields to be used in the super call to make the construction more readable
 	public final int MIN_ADD = 25;
 	public final int MAX_ADD = 50;
+	private static int hitPoints = 75;
+	private static int attackSpeed = 5;
+	private static double chanceToHit = .7;
+	private static int damageMin = 25;
+	private static int damageMax = 50;
+	private static double chanceToBlock = .3;
 
 //-----------------------------------------------------------------
     public Sorceress()
 	{
-		super("Sorceress", 75, 5, .7, 25, 50, .3);
+		super("Sorceress", hitPoints , attackSpeed, chanceToHit, damageMin, damageMax, chanceToBlock);
 
 
     }//end constructor
@@ -49,15 +56,13 @@ public class Sorceress extends Hero
 //-----------------------------------------------------------------
     public void battleChoices(DungeonCharacter opponent)
 	{
-		super.battleChoices(opponent);
+    	super.battleChoices(opponent);
+		
 		int choice;
 
 		do
 		{
-		    System.out.println("1. Attack Opponent");
-		    System.out.println("2. Increase Hit Points");
-		    System.out.print("Choose an option: ");
-		    choice = Keyboard.readInt();
+		   choice = super.attackMenu("Increase Hit Points", opponent);
 
 		    switch (choice)
 		    {
@@ -70,7 +75,7 @@ public class Sorceress extends Hero
 		    }//end switch
 
 			numTurns--;
-		    if (numTurns > 0)
+			if (numTurns > 0)
 			    System.out.println("Number of turns remaining is: " + numTurns);
 
 		} while(numTurns > 0 && hitPoints > 0 && opponent.getHitPoints() > 0);
