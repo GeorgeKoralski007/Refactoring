@@ -119,12 +119,13 @@ true if the user chooses to continue, false otherwise.
 ---------------------------------------------------------------------*/
 	public static boolean playAgain()
 	{
-		char again;
-
-		System.out.println("Play again (y/n)?");
-		again = Keyboard.readChar();
-
-		return (again == 'Y' || again == 'y');
+		char input;
+      do
+      {
+   		System.out.println("Play again (y/n)?");
+   		input = Character.toLowerCase(Keyboard.readChar());
+      } while (input != 'y' && input != 'n');
+		return input == 'y';
 	}//end playAgain method
 
 
