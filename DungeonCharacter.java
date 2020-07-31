@@ -86,7 +86,7 @@ Returns: nothing
 This method calls: nothing
 This method is called by: heal method of monsters and Sorceress
 ---------------------------------------------------------*/
-	public void addHitPoints(int hitPoints)
+	protected void addHitPoints(int hitPoints)
 	{
 		if (hitPoints <=0)
 			System.out.println("Hitpoint amount must be positive.");
@@ -109,7 +109,7 @@ Returns: nothing
 This method calls: nothing
 This method is called by: overridden versions in Hero and Monster
 ---------------------------------------------------------*/
-	public void subtractHitPoints(int hitPoints)
+	protected void subtractHitPoints(int hitPoints)
 	{
 		if (hitPoints <0)
 			System.out.println("Hitpoint amount must be positive.");
@@ -140,7 +140,7 @@ Returns: true is hero is alive, false otherwise
 This method calls: nothing
 This method is called by: unknown (intended for external use)
 ---------------------------------------------------------*/
-    public boolean isAlive()
+   public boolean isAlive()
 	{
 	  return (hitPoints > 0);
 	}//end isAlive method
