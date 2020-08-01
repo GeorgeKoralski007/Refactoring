@@ -46,7 +46,7 @@ public abstract class DungeonCharacter
 //-----------------------------------------------------------------
 //explicit constructor to initialize instance variables -- it is called
 // by derived classes
-	public DungeonCharacter(String name, int hitPoints, int attackSpeed,
+	protected DungeonCharacter(String name, int hitPoints, int attackSpeed,
 				     double chanceToHit, int damageMin, int damageMax)
 	{
 
@@ -60,24 +60,30 @@ public abstract class DungeonCharacter
 	}//end constructor
 
 //-----------------------------------------------------------------
-	public String getName()
+	protected String getName()
 	{
 		return name;
 	}//end getName
 
 //-----------------------------------------------------------------
-	public int getHitPoints()
+	protected int getHitPoints()
 	{
 		return hitPoints;
 	}//end getHitPoints
 //-----------------------------------------------------------------
-	public int getAttackSpeed()
+	protected int getAttackSpeed()
 	{
 		return attackSpeed;
 	}//end getAttackSpeed
 
-
+	private int getDamage()
+	{
+		 int damage = (int)(Math.random() * (damageMax - damageMin + 1))
+					+ damageMin ;;
+		 return damage;
+	}
 /*-------------------------------------------------------
+
 addHitPoints is used to increment the hitpoints a dungeon character has
 
 Receives: number of hit points to add
@@ -140,7 +146,11 @@ Returns: true is hero is alive, false otherwise
 This method calls: nothing
 This method is called by: unknown (intended for external use)
 ---------------------------------------------------------*/
+<<<<<<< Updated upstream
    public boolean isAlive()
+=======
+	protected boolean isAlive()
+>>>>>>> Stashed changes
 	{
 	  return (hitPoints > 0);
 	}//end isAlive method
@@ -157,7 +167,7 @@ This method calls: Math.random(), subtractHitPoints()
 This method is called by: overridden versions of the method in monster and
 hero classes and externally
 ---------------------------------------------------------*/
-	public void attack(DungeonCharacter opponent)
+	protected void attack(DungeonCharacter opponent)
 	{
 		boolean canAttack;
 		int damage;
@@ -166,11 +176,8 @@ hero classes and externally
 
 		if (canAttack)
 		{
-			damage = (int)(Math.random() * (damageMax - damageMin + 1))
-						+ damageMin ;
-			opponent.subtractHitPoints(damage);
-
-
+			
+			opponent.subtractHitPoints(getDamage());
 
 			System.out.println();
 		}//end if can attack
@@ -185,7 +192,8 @@ hero classes and externally
 	}//end attack method
 
 //-----------------------------------------------------------------
-
+	
+	
 
 
 }//end class Character
