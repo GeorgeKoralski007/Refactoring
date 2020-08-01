@@ -10,11 +10,20 @@
  */
 
 public class Skeleton extends Monster
-{
-
+{	
+	 static String name = "Sargath the Skeleton";
+	 static int hitPoints=100;
+	 static int attackSpeed=3; 
+	 static double chanceToHit=.8;
+	 static double chanceToHeal =.3;
+	 static  int damageMin=30;
+	 static int damageMax=50;
+	 static int minHeal = 30;
+	 static int maxHeal = 50;
     public Skeleton()
 	{
-		super("Sargath the Skeleton", 100, 3, .8, .3, 30, 50, 30, 50);
+		super(name, hitPoints, attackSpeed, chanceToHit, chanceToHeal, 
+				damageMin, damageMax, minHeal, maxHeal);
 
     }//end constructor
 

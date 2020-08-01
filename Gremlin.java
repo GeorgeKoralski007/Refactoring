@@ -11,10 +11,19 @@
 
 public class Gremlin extends Monster
 {
-
+	 static String name = "Gnarltooth the Gremlin";
+	 static int hitPoints=70;
+	 static int attackSpeed=5; 
+	 static double chanceToHit=.8;
+	 static double chanceToHeal =.4;
+	 static  int damageMin=15;
+	 static int damageMax=30;
+	 static int minHeal = 20;
+	 static int maxHeal = 40;
     public Gremlin()
 	{
-		super("Gnarltooth the Gremlin", 70, 5, .8, .4, 15, 30, 20, 40);
+		super(name, hitPoints, attackSpeed, chanceToHit, chanceToHeal,
+				damageMin, damageMax, minHeal, maxHeal);
 
     }//end constructor
 
