@@ -146,11 +146,11 @@ Returns: true is hero is alive, false otherwise
 This method calls: nothing
 This method is called by: unknown (intended for external use)
 ---------------------------------------------------------*/
-<<<<<<< Updated upstream
-   public boolean isAlive()
-=======
+//<<<<<<< Updated upstream
+//   public boolean isAlive()
+//=======
 	protected boolean isAlive()
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 	{
 	  return (hitPoints > 0);
 	}//end isAlive method
