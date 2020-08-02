@@ -100,11 +100,12 @@ public void subtractHitPoints(int hitPoints)
 
 	}//end method
 
+	protected abstract void battleChoices(DungeonCharacter opponent);
+   
 /*-------------------------------------------------------
-battleChoices will be overridden in derived classes.  It computes the
+InitializeTurns.  It computes the
 number of turns a hero will get per round based on the opponent that is
-being fought.  The number of turns is reported to the user.  This stuff might
-go better in another method that is invoked from this one...
+being fought.  The number of turns is reported to the user. 
 
 Receives: opponent
 Returns: nothing
@@ -112,7 +113,7 @@ Returns: nothing
 This method calls: getAttackSpeed()
 This method is called by: external sources
 ---------------------------------------------------------*/
-	public void battleChoices(DungeonCharacter opponent)
+	protected void initializeTurns(DungeonCharacter opponent)
 	{
 	    numTurns = attackSpeed/opponent.getAttackSpeed();
 
@@ -127,14 +128,12 @@ This method is called by: external sources
 	//Can be overloaded if a new hero ends up having 3 moves
 	public int attackMenu(String specialMove, DungeonCharacter opponent){
 		int choice;
-
-
+      do {
 			System.out.println("1. Attack Opponent");
 			System.out.println("2. " + specialMove);
 			System.out.print("Choose an option: ");
 			choice = Keyboard.readInt();
-
-		
+      } while (choice < 1 || choice > 2);
 		return choice;
 	}
 
