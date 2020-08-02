@@ -17,11 +17,11 @@
  *  class methods (all are directly accessible by derived classes):
  *    DungeonCharacter(String name, int hitPoints, int attackSpeed,
 				     double chanceToHit, int damageMin, int damageMax)
-	  public String getName()
-	  public int getHitPoints()
-	  public int getAttackSpeed()
-	  public void addHitPoints(int hitPoints)
-	  public void subtractHitPoints(int hitPoints) -- this method will be
+	  protected String getName()
+	  protected int getHitPoints()
+	  protected int getAttackSpeed()
+	  protected void addHitPoints(int hitPoints)
+	  protected void subtractHitPoints(int hitPoints) -- this method will be
 	    overridden
 	  public boolean isAlive()
 	  public void attack(DungeonCharacter opponent) -- this method will be
@@ -146,11 +146,7 @@ Returns: true is hero is alive, false otherwise
 This method calls: nothing
 This method is called by: unknown (intended for external use)
 ---------------------------------------------------------*/
-//<<<<<<< Updated upstream
-//   public boolean isAlive()
-//=======
-	protected boolean isAlive()
-//>>>>>>> Stashed changes
+	public boolean isAlive()
 	{
 	  return (hitPoints > 0);
 	}//end isAlive method
@@ -167,7 +163,7 @@ This method calls: Math.random(), subtractHitPoints()
 This method is called by: overridden versions of the method in monster and
 hero classes and externally
 ---------------------------------------------------------*/
-	protected void attack(DungeonCharacter opponent)
+	public void attack(DungeonCharacter opponent)
 	{
 		boolean canAttack;
 		int damage;
@@ -176,17 +172,12 @@ hero classes and externally
 
 		if (canAttack)
 		{
-			
 			opponent.subtractHitPoints(getDamage());
-
 			System.out.println();
 		}//end if can attack
 		else
 		{
-
-			System.out.println(getName() + "'s attack on " + opponent.getName() +
-								" failed!");
-			System.out.println();
+			System.out.println(getName() + "'s attack on " + opponent.getName() +" failed!\n");
 		}//end else
 
 	}//end attack method

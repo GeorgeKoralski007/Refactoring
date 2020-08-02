@@ -31,16 +31,16 @@ public class Warrior extends Hero
     }//end constructor
 
 
-	public void crushingBlow(DungeonCharacter opponent)
+	private void crushingBlow(DungeonCharacter opponent)
 	{
-		if (Math.random() <= .4)
+		if (Math.random() <= .4) // 40% chance for crushingBlow attack
 		{
 			int blowPoints = (int)(Math.random() * 76) + 100;
 			System.out.println(name + " lands a CRUSHING BLOW for " + blowPoints
 								+ " damage!");
 			opponent.subtractHitPoints(blowPoints);
 		}//end blow succeeded
-		else
+		else // 60% chance to skip the turn without attack
 		{
 			System.out.println(name + " failed to land a crushing blow");
 			System.out.println();
@@ -55,10 +55,7 @@ public class Warrior extends Hero
 		super.attack(opponent);
 	}//end override of attack method
 
-
-
-
-    public void battleChoices(DungeonCharacter opponent)
+   public void battleChoices(DungeonCharacter opponent)
 	{
     	super.battleChoices(opponent);
 		

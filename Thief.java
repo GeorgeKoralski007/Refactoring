@@ -28,25 +28,22 @@ public class Thief extends Hero
 
     }//end constructor
 
-	public void surpriseAttack(DungeonCharacter opponent)
+	private void surpriseAttack(DungeonCharacter opponent)
 	{
 		double surprise = Math.random();
-		if (surprise <= .4)
+		if (surprise <= .4) // 40% chance to get additional turn
 		{
 			System.out.println("Surprise attack was successful!\n" +
 								name + " gets an additional turn.");
 			numTurns++;
-			attack(opponent);
 		}//end surprise
-		else if (surprise >= .9)
+		else if (surprise >= .9) // 10% chance to skip the turn without attack
 		{
 			System.out.println("Uh oh! " + opponent.getName() + " saw you and" +
 								" blocked your attack!");
-		}
-		else
-		    attack(opponent);
-
-
+         return;
+		} 
+		attack(opponent);
 	}//end surpriseAttack method
 
 
