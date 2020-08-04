@@ -76,9 +76,10 @@ this task
    		System.out.println("Choose a hero:\n" +
    					          "1. Warrior\n" +
    					      	 "2. Sorceress\n" +
-       	                   "3. Thief");
+       	                   "3. Thief\n"+
+                            "4. King");
 		   choice = Keyboard.readInt();
-      } while (choice < 1 || choice > 3);
+      } while (choice < 1 || choice > 4);
       
       return DungeonCharacterFactory.createHero(choice);
 
