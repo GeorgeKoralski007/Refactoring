@@ -46,6 +46,10 @@ public class Thief extends Hero
 		attack(opponent);
 	}//end surpriseAttack method
 
+   public void specialSkill(DungeonCharacter opponent)
+	{
+		surpriseAttack(opponent);
+	}
 
     public void battleChoices(DungeonCharacter opponent)
 	{
@@ -61,7 +65,7 @@ public class Thief extends Hero
 		    {
 			    case 1: attack(opponent);
 			        break;
-			    case 2: surpriseAttack(opponent);
+			    case 2: specialSkill(opponent);
 			        break;
 			    default:
 			        System.out.println("invalid choice!");

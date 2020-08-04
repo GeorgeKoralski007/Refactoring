@@ -34,6 +34,14 @@ public class Skeleton extends Monster
 		super.attack(opponent);
 
 	}//end override of attack
+   
+   public void specialSkill(DungeonCharacter opponent)
+	{
+   	int damagePoints = (int)(Math.random() * 20) + 50;
+		System.out.println(name + " shoots at " + opponent.getName() + " with " + damagePoints
+								+ " damage!");
+		opponent.subtractHitPoints(damagePoints);
+	}
 
 
 }//end class Skeleton

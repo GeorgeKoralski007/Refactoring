@@ -182,6 +182,7 @@ hero classes and externally
 
 	}//end attack method
 
+	public abstract void specialSkill(DungeonCharacter opponent);
 //-----------------------------------------------------------------
 	
 	

@@ -35,6 +35,14 @@ public class Ogre extends Monster
 		super.attack(opponent);
 
 	}//end override of attack
+   
+   public void specialSkill(DungeonCharacter opponent)
+	{
+   	int damagePoints = (int)(Math.random() * 30) + 30;
+		System.out.println(name + " swings his club at " + opponent.getName() + " with " + damagePoints
+								+ " damage!");
+		opponent.subtractHitPoints(damagePoints);
+	}
 
 
 }//end Monster class

@@ -34,6 +34,14 @@ public class Gremlin extends Monster
 		super.attack(opponent);
 
 	}//end override of attack
+   
+   public void specialSkill(DungeonCharacter opponent)
+	{
+   	int damagePoints = (int)(Math.random() * 20) + 50;
+		System.out.println(name + " bytes at " + opponent.getName() + " with " + damagePoints
+								+ " damage!");
+		opponent.subtractHitPoints(damagePoints);
+	}
 
 
 }//end class Gremlin

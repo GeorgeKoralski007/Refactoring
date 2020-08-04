@@ -53,6 +53,11 @@ public class Sorceress extends Hero
 		super.attack(opponent);
 	}//end override of attack method
 
+   public void specialSkill(DungeonCharacter opponent)
+	{
+		increaseHitPoints();
+	}
+   
 //-----------------------------------------------------------------
    public void battleChoices(DungeonCharacter opponent)
 	{
@@ -68,7 +73,7 @@ public class Sorceress extends Hero
 		    {
 			    case 1: attack(opponent);
 			        break;
-			    case 2: increaseHitPoints();
+			    case 2: specialSkill(opponent);
 			        break;
 			    default:
 			        System.out.println("invalid choice!");

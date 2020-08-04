@@ -131,7 +131,12 @@ user has the option of quitting.
 
 			//monster's turn (provided it's still alive!)
 			if (theMonster.isAlive())
-			    theMonster.attack(theHero);
+         {
+            if (Math.random() <= 0.3) // 30% chance for special skill attack
+			      theMonster.specialSkill(theHero);
+            else
+               theMonster.attack(theHero);
+         }
          
 			//let the player bail out if desired only if both are alive
          if (theHero.isAlive() && theMonster.isAlive())
