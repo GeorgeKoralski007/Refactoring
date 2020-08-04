@@ -1,0 +1,164 @@
+ 
+  ----jGRASP exec: java Dungeon
+ Choose a hero:
+ 1. Warrior
+ 2. Sorceress
+ 3. Thief
+ 4. King
+ 1
+ Enter character name: George
+ George battles Oscar the Ogre
+ ---------------------------------------------
+ Number of turns this round is: 2
+ 1. Attack Opponent
+ 2. Crushing blow on Oscar the Ogre
+ Choose an option: 1
+ George swings a mighty sword at Oscar the Ogre:
+ Oscar the Ogre hit  for <53> points damage.
+ Oscar the Ogre now has 147 hit points remaining.
+ 
+ 
+ Number of turns remaining is: 1
+ 1. Attack Opponent
+ 2. Crushing blow on Oscar the Ogre
+ Choose an option: 2
+ George lands a CRUSHING BLOW for 153 damage!
+ Oscar the Ogre hit  for <153> points damage.
+ Oscar the Ogre now has 0 hit points remaining.
+ 
+ Oscar the Ogre has been killed :-(
+ George was victorious!
+ Play again (y/n)?
+ y
+ Choose a hero:
+ 1. Warrior
+ 2. Sorceress
+ 3. Thief
+ 4. King
+ 4
+ Enter character name: Joe
+ Joe battles Sargath the Skeleton
+ ---------------------------------------------
+ Number of turns this round is: 1
+ 1. Attack Opponent
+ 2. Suprise Attack on Sargath the Skeleton
+ Choose an option: 1
+ Sargath the Skeleton hit  for <25> points damage.
+ Sargath the Skeleton now has 75 hit points remaining.
+ 
+ 
+ Sargath the Skeleton slices his rusty blade at Joe:
+ Sargath the Skeleton's attack on Joe failed!
+ 
+ 
+ Continue battle (y/n): a
+ 
+ Continue battle (y/n): y
+ Number of turns this round is: 1
+ 1. Attack Opponent
+ 2. Suprise Attack on Sargath the Skeleton
+ Choose an option: 2
+ Joe smites 100 damage!
+ Sargath the Skeleton hit  for <100> points damage.
+ Sargath the Skeleton now has 0 hit points remaining.
+ 
+ Sargath the Skeleton has been killed :-(
+ Joe was victorious!
+ Play again (y/n)?
+ y
+ Choose a hero:
+ 1. Warrior
+ 2. Sorceress
+ 3. Thief
+ 4. King
+ 3
+ Enter character name: bob
+ bob battles Gnarltooth the Gremlin
+ ---------------------------------------------
+ Number of turns this round is: 1
+ 1. Attack Opponent
+ 2. Suprise Attack on Gnarltooth the Gremlin
+ Choose an option: 2
+ Surprise attack was successful!
+ bob gets an additional turn.
+ Gnarltooth the Gremlin hit  for <32> points damage.
+ Gnarltooth the Gremlin now has 38 hit points remaining.
+ 
+ 
+ Number of turns remaining is: 1
+ 1. Attack Opponent
+ 2. Suprise Attack on Gnarltooth the Gremlin
+ Choose an option: 2
+ Surprise attack was successful!
+ bob gets an additional turn.
+ Gnarltooth the Gremlin hit  for <21> points damage.
+ Gnarltooth the Gremlin now has 17 hit points remaining.
+ 
+ Gnarltooth the Gremlin healed itself for 37 points.
+ Total hit points remaining are: 54
+ 
+ 
+ Number of turns remaining is: 1
+ 1. Attack Opponent
+ 2. Suprise Attack on Gnarltooth the Gremlin
+ Choose an option: 1
+ Gnarltooth the Gremlin hit  for <34> points damage.
+ Gnarltooth the Gremlin now has 20 hit points remaining.
+ 
+ Gnarltooth the Gremlin healed itself for 32 points.
+ Total hit points remaining are: 52
+ 
+ 
+ Gnarltooth the Gremlin jabs his kris at bob:
+ bob BLOCKED the attack!
+ 
+ 
+ Continue battle (y/n): y
+ Number of turns this round is: 1
+ 1. Attack Opponent
+ 2. Suprise Attack on Gnarltooth the Gremlin
+ Choose an option: 3
+ 1. Attack Opponent
+ 2. Suprise Attack on Gnarltooth the Gremlin
+ Choose an option: 2
+ Surprise attack was successful!
+ bob gets an additional turn.
+ Gnarltooth the Gremlin hit  for <25> points damage.
+ Gnarltooth the Gremlin now has 27 hit points remaining.
+ 
+ 
+ Number of turns remaining is: 1
+ 1. Attack Opponent
+ 2. Suprise Attack on Gnarltooth the Gremlin
+ Choose an option: 2
+ bob's attack on Gnarltooth the Gremlin failed!
+ 
+ Gnarltooth the Gremlin jabs his kris at bob:
+ bob hit  for <30> points damage.
+ bob now has 45 hit points remaining.
+ 
+ 
+ 
+ Continue battle (y/n): y
+ Number of turns this round is: 1
+ 1. Attack Opponent
+ 2. Suprise Attack on Gnarltooth the Gremlin
+ Choose an option: 1
+ Gnarltooth the Gremlin hit  for <21> points damage.
+ Gnarltooth the Gremlin now has 6 hit points remaining.
+ 
+ Gnarltooth the Gremlin healed itself for 32 points.
+ Total hit points remaining are: 38
+ 
+ 
+ Gnarltooth the Gremlin bytes at bob with 68 damage!
+ bob hit  for <68> points damage.
+ bob now has 0 hit points remaining.
+ 
+ bob has been killed :-(
+ bob was defeated :-(
+ Play again (y/n)?
+ n
+ 
+  ----jGRASP: operation complete.
+ 
